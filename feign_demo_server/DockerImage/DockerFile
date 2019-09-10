@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-ADD feign-server.jar /opt/app/app.jar
+ADD feign_demo_server-0.0.1-SNAPSHOT.jar /opt/app/app.jar
 RUN bash -c 'touch /opt/app/app.jar'
 
 # 开放8080端口

@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: feign-server
+  labels:
+    app: feign-server
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: feign-server
+  template:
+    metadata:
+      labels:
+        app: feign-server
+    spec:
+      containers:
+      - name: feign-server
+        #image名称是我们的hello:1.0
+        image: node1:30500/feign-server:1.0
+        ports:
+        - containerPort: 8004
+          protocol: TCP
+      # Comment the following tolerations if Dashboard must not be deployed on master
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: feign-server
+  labels:
+    app: feign-server
+spec:
+  ports:
+  - port: 8004
+    targetPort: 8004
+  selector:
+    app: feign-server
+  type: NodePort

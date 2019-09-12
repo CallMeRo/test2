@@ -15,7 +15,7 @@ public class HelloController {
     @RequestMapping("/test")
     @ResponseBody
     public String test() {
-        return "Greetings from Spring test v3!";
+        return "Greetings from Spring test v4!";
     }
 
 }

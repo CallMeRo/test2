@@ -11,8 +11,8 @@ public class HelloController {
     public String index() {
         System.out.println("client invoke");
 
-        return "云谝启动成功";
-        //return "场景交流社区启动成功";
+        //return "云谝启动成功";
+        return "场景交流社区启动成功";
     }
     @RequestMapping("/test")
     @ResponseBody

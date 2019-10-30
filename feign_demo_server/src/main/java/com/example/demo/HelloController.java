@@ -11,8 +11,8 @@ public class HelloController {
     public String index() {
         System.out.println("client invoke");
 
-        return "hello from server";
-        //return "hello from 云谝";
+        //return "hello from server";
+        return "hello from 云谝";
     }
     @RequestMapping("/test")
     @ResponseBody

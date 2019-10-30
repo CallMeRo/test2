@@ -10,7 +10,9 @@ public class HelloController {
     @ResponseBody
     public String index() {
         System.out.println("client invoke");
+
         return "hello from server";
+        //return "hello from 云谝";
     }
     @RequestMapping("/test")
     @ResponseBody
